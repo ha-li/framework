@@ -1,10 +1,20 @@
 package com.gecko.core.domain;
 
-public class DataObject implements Comparable {
+abstract class DataObject implements Comparable<DataObject> {
 
-	public int compareTo(Object other) {
-		if(other == null) return 1;
+	public int compareTo(DataObject other) {
+		if(other == null) throw new NullPointerException("Invalid comparison object");
 		
-		return this.compareTo(other);
+		else if( !(other instanceof DataObject) ) throw new IllegalArgumentException("Invalid comparison object");
+		
+		else {
+			if(this == other) return ComparableConstant.EQUAL;
+			else if( this.hashCode() == other.hashCode() ) return ComparableConstant.EQUAL;
+			else if( this.hashCode() < other.hashCode() ) return ComparableConstant.BEFORE;
+			else if( this.hashCode() > other.hashCode() ) return ComparableConstant.AFTER;
+			else return ComparableConstant.EQUAL;
+		}
 	}
+	
+	
 }

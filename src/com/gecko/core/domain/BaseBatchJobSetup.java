@@ -3,22 +3,19 @@ package com.gecko.core.domain;
 public class BaseBatchJobSetup extends DataObject {
 	
 	public boolean equals(Object obj) {
-		if(obj == null || !(obj instanceof BatchJobSetup)) 
-		{
-			return false;
-		}
-		else if ( this == obj) 
-		{ 
-			return true;
-		}
-		else 
-		{
-			return getJobType() == null ? false : getJobType().equals(((BatchJobSetup)obj).getJobType());
-		}
+		if(obj == null) return false;
+		
+		if( !(obj instanceof BatchJobSetup) ) return false;
+		
+		if (this == obj)  return true;
+		
+		BatchJobSetup that = (BatchJobSetup) obj;
+		
+		return getJobType().equals(that.getJobType());
 	}
 	
 	public int hashCode() {
-		return getJobType() == null ? super.hashCode() : getJobType().hashCode();
+		return getJobType().hashCode();
 	}
 	
 	private String jobProcessorClassName;
