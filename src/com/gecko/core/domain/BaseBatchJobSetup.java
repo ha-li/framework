@@ -1,6 +1,6 @@
 package com.gecko.core.domain;
 
-public class BaseBatchJobSetup extends DataObject {
+abstract class BaseBatchJobSetup extends DataObject {
 	
 	public boolean equals(Object obj) {
 		if(obj == null) return false;
