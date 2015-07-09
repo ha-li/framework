@@ -8,12 +8,7 @@ public final class Key implements Comparable<Key> {
 
 	private int priority;
 	public int getPriority() { return priority; }
-	public int priority() { return getPriority(); }
-	// public Key key() { return this; }
-	
-	private final int BEFORE = -1;
-	private final int EQUAL = 0;
-	private final int AFTER = 1;
+	public int priority() { return getPriority(); }	
 	
 	@Override
 	public int compareTo(Key o) {
@@ -22,10 +17,10 @@ public final class Key implements Comparable<Key> {
 		else if( !(o instanceof Key) ) throw new IllegalArgumentException("Invalid comparison object");
 		
 		else {
-			if(this == o) return EQUAL;
-			else if (this.priority < o.priority ) return BEFORE;
-			else if (this.priority > o.priority ) return AFTER;
-			else return EQUAL;   // get here means priority are the same
+			if(this == o) return ComparableConstant.EQUAL;
+			else if (this.priority < o.priority ) return ComparableConstant.BEFORE;
+			else if (this.priority > o.priority ) return ComparableConstant.AFTER;
+			else return ComparableConstant.EQUAL;   // get here means priority are the same
 		}
 	}
 	
@@ -41,9 +36,12 @@ public final class Key implements Comparable<Key> {
 		if(null == o) return false;
 		
 		if(this == o) return true;
+		
 		if( !(o instanceof Key) ) return false;
 		
 		Key that = (Key) o;
+		
+		// for orm techs you should use getters, never directly access member fields
 		return that.getPriority() == getPriority();
 	}
 	
