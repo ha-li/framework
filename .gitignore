@@ -1,5 +1,7 @@
 .classpath
 .project
 .settings
-bin/*
+*.iml
+/.idea/
+/bin/
 test-output
