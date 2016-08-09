@@ -7,11 +7,11 @@ import java.util.Properties;
 /**
  * Created by hlieu on 05/26/16.
  */
-public class GeckoProperties {
+public class PropertiesLoader {
+    // public PropertiesLoader() {}
 
-
-    public void readProperties(String fileName) {
-        InputStream fis = getClass().getResourceAsStream(fileName);
+    public static Properties readProperties(String fileName) {
+        InputStream fis = PropertiesLoader.class.getResourceAsStream(fileName);
         Properties p = new Properties();
         try {
             p.load(fis);
@@ -24,11 +24,12 @@ public class GeckoProperties {
                 e.printStackTrace();
             }
         }
+        return p;
     }
 
 
-    public void readXmlProperties(String xmlFileName) {
-        InputStream xfis = getClass().getResourceAsStream(xmlFileName);
+    public static Properties readXmlProperties(String xmlFileName) {
+        InputStream xfis = PropertiesLoader.class.getResourceAsStream(xmlFileName);
         Properties p = new Properties();
         try {
             p.loadFromXML(xfis);
@@ -41,5 +42,6 @@ public class GeckoProperties {
                 ioe.printStackTrace();
             }
         }
+        return p;
     }
 }
