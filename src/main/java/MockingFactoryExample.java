@@ -2,7 +2,7 @@ import com.gecko.addenda.MockReturnAddenda;
 import com.gecko.addenda.ReturnAddenda;
 import com.gecko.common.utils.AddendaFactory;
 
-public class Main {
+public class MockingFactoryExample {
 
     public static void mockAddenda(String[] args) {
         AddendaFactory.setInstanceClass(MockReturnAddenda.class);
