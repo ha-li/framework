@@ -11,10 +11,12 @@ import java.util.Properties;
  * Created by hlieu on 05/26/16.
  */
 public class PropertiesLoader {
-    // public PropertiesLoader() {}
+
+    private static String ENVIRONMENT = "env";
+    private static String env = System.getProperty(ENVIRONMENT, "local");
 
     public static Properties readProperties(String fileName) throws FileNotFoundException {
-        URL path = ClassLoader.getSystemResource(fileName);
+        URL path = ClassLoader.getSystemResource(env + "/" + fileName);
         if(path == null) {
             throw new FileNotFoundException("file not found: " + fileName);
         }

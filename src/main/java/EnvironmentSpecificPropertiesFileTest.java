@@ -8,11 +8,11 @@ import java.util.Properties;
  */
 public class EnvironmentSpecificPropertiesFileTest {
 
-    private String ENVIRONMENT = "env";
+
 
     public Properties getProperties(String fileName) throws NullPointerException, FileNotFoundException {
-        String env = System.getProperty("env", "local");
-        Properties properties = PropertiesLoader.readProperties(env + "/" + fileName);
+        // String env = System.getProperty("env", "local");
+        Properties properties = PropertiesLoader.readProperties(fileName);
         if(properties == null) {
             throw new NullPointerException("Empty properties: file not found.");
         }

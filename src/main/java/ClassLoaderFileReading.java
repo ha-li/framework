@@ -2,7 +2,6 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.io.InputStream;
 import java.net.URL;
 
 /**
@@ -64,7 +63,7 @@ public class ClassLoaderFileReading {
     public static void main(String[] args) {
         ClassLoaderFileReading fileReading = new ClassLoaderFileReading();
         fileReading.fileNotFoundException("sys.properties");
-        fileReading.classLoaderFileReading("sys.properties");
-        fileReading.thisClassLoaderFileReading("sys.properties");
+        fileReading.classLoaderFileReading("local/sys.properties");
+        fileReading.thisClassLoaderFileReading("local/sys.properties");
     }
 }
