@@ -1,7 +1,10 @@
 package com.gecko.util.properties;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.URL;
 import java.util.Properties;
 
 /**
@@ -10,8 +13,12 @@ import java.util.Properties;
 public class PropertiesLoader {
     // public PropertiesLoader() {}
 
-    public static Properties readProperties(String fileName) {
-        InputStream fis = PropertiesLoader.class.getResourceAsStream(fileName);
+    public static Properties readProperties(String fileName) throws FileNotFoundException {
+        URL path = ClassLoader.getSystemResource(fileName);
+        if(path == null) {
+            throw new FileNotFoundException("file not found: " + fileName);
+        }
+        FileInputStream fis = new FileInputStream(path.getFile());
         Properties p = new Properties();
         try {
             p.load(fis);
