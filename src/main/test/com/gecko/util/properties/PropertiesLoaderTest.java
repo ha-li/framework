@@ -10,6 +10,6 @@ public class PropertiesLoaderTest {
     public static void main(String[] args) throws FileNotFoundException{
         //PropertiesLoader g = new PropertiesLoader();
         Properties p = PropertiesLoader.readXmlProperties("/sys.properties.xml");
-        Properties p2 = PropertiesLoader.readProperties("/sys.properties");
+        Properties p2 = PropertiesLoader.readProperties("sys.properties");
     }
 }
