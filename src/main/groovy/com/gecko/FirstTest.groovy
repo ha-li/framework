@@ -1,3 +1,5 @@
+package com.gecko
+
 import java.awt.BorderLayout as BL
 import javax.swing.WindowConstants as WC
 import groovy.swing.SwingBuilder
