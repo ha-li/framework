@@ -58,3 +58,15 @@ try {
 
 assert !ClassUtils.isInnerClass(OutScript);
 assert ClassUtils.isInnerClass(OutScript.InnerScript);
+
+[1,2,3].each { entry -> System.out.println("printing " + entry); }
+
+int sum = 0;
+int product = 1;
+[1,2,3].each { key -> sum += key;  product *= key; }
+System.out.println("sum is " + sum);
+System.out.println("prod is " + product);
+
+def abc = "abcd";
+def c = "b";
+System.out.println (abc - c);
