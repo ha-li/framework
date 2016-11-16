@@ -1,11 +1,9 @@
 package com.gecko
 
 /**
+ * An example of operator override in groovy
+ *
  * Created by hlieu on 11/15/16.
- */
-
-/**
- * an example of operator override in groovy
  */
 class Modulo {
     int value;
