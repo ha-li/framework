@@ -15,7 +15,7 @@ package com.gecko.innerclass;
  *
  * Likewise, the inner class can fully access all of
  * the outer class for the same reason.
- * 
+ *
  */
 public class Outer {
 
@@ -40,6 +40,7 @@ public class Outer {
       return in.getOuterPrivates ();
    }
 
+   // an inner class
    private class Inner {
       private int inner_private_int;
       private Inner (int v) {
