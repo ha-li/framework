@@ -1,4 +1,4 @@
-package com.gecko.core.domain;
+package com.gecko.core.batch.domain;
 
 abstract class DataObject implements Comparable<DataObject> {
 

@@ -1,4 +1,4 @@
-package com.gecko.core.domain;
+package com.gecko.core.batch.domain;
 
 public final class Key implements Comparable<Key> {
 

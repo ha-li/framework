@@ -1,4 +1,4 @@
-package com.gecko.core.domain;
+package com.gecko.core.batch.domain;
 
 public class ComparableConstant {
 	public static final int BEFORE = -1;
